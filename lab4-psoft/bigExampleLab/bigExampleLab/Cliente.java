@@ -1,5 +1,6 @@
 package bigExampleLab;
 
+
 import java.util.Enumeration;
 import java.util.Vector;
 
@@ -12,7 +13,7 @@ class Cliente {
 		this.nome = nome;
 	}
 
-	public void addCompra(Compra arg) {
+	public void addCompra(bigExampleLab.Compra arg) {
 		compras.addElement(arg);
 	}
 

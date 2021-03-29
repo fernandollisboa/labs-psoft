@@ -1,4 +1,5 @@
 package bigExampleLab;
+
 public class Anuncio {
 
 	public static final int TEXTO = 2;
