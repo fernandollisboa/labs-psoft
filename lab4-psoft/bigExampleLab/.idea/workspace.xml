@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99bdfe07-ce0e-4587-a118-0923d6c5070a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bigExampleLab/TipoAnuncio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bigExampleLab/AnuncioFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bigExampleLab/Anuncio.java" beforeDir="false" afterPath="$PROJECT_DIR$/bigExampleLab/Anuncio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bigExampleLab/AnuncioImagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/bigExampleLab/AnuncioImagem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bigExampleLab/AnuncioTexto.java" beforeDir="false" afterPath="$PROJECT_DIR$/bigExampleLab/AnuncioTexto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bigExampleLab/AnuncioVideo.java" beforeDir="false" afterPath="$PROJECT_DIR$/bigExampleLab/AnuncioVideo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bigExampleLab/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/bigExampleLab/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bigExampleLab/Compra.java" beforeDir="false" afterPath="$PROJECT_DIR$/bigExampleLab/Compra.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bigExampleLab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/bigExampleLab/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bigExampleLab/TipoAnuncio.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectId" id="1qQCMHayQa1sFH4U3KYqKsTKUW8" />
@@ -38,7 +42,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../lab5-psoft" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -48,6 +52,19 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="bigExampleLab.Main" />
+      <module name="bigExampleLab" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bigExampleLab.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -61,6 +78,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -75,7 +97,7 @@
       <workItem from="1617004137463" duration="2877000" />
       <workItem from="1618137794180" duration="47000" />
       <workItem from="1618180266619" duration="4082000" />
-      <workItem from="1618192362943" duration="960000" />
+      <workItem from="1618192362943" duration="3914000" />
     </task>
     <servers />
   </component>

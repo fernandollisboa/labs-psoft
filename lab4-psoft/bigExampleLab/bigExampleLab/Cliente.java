@@ -37,7 +37,7 @@ class Cliente {
 		while (comprasAnuncio.hasMoreElements()) {
 			Compra currentCompra = (Compra) comprasAnuncio.nextElement();
 			pontosFrequentes++;
-			if ((currentCompra.getCodigoPrecoAnuncio() == Anuncio.VIDEO) && currentCompra.getDiasAnuncio() > 1)
+			if (( currentCompra.getAnuncio().getClass()== AnuncioTexto.class) && currentCompra.getDiasAnuncio() > 1)
 				pontosFrequentes++;
 		}
 		return pontosFrequentes;
