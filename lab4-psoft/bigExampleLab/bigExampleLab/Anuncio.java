@@ -1,26 +1,30 @@
 package bigExampleLab;
 
-public class Anuncio {
+public abstract class Anuncio {
 
-	public static final int TEXTO = 2;
-	public static final int IMAGEM = 0;
-	public static final int VIDEO = 1;
+	protected String descricao;
+	protected double preco;
 
-	private String descricao;
-	private int codigoPreco;
+	Anuncio(){
 
-	public Anuncio(String descricao, int codigoPreco) {
+	}
+	public Anuncio(String descricao, String codigoPreco) {
 		this.descricao = descricao;
-		this.codigoPreco = codigoPreco;
-	}
-	public int getCodigoPreco() {
-		return codigoPreco;
+		switch (codigoPreco){
+			case(0):
+				new AnuncioImagem();
+				break;
+			case(1):
+				new AnuncioVideo();
+				break;
+			case(2):
+				new AnuncioTexto();
+		}
+		this.descricao = descricao;
 	}
 
-	public void setCodigoPreco(int arg) {
-		codigoPreco = arg;
-	}
 	public String getDescricao (){
 		return descricao;
 	}
+	public abstract double calculaPreco(int dias);
 }
