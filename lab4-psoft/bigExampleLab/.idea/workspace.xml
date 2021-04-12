@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99bdfe07-ce0e-4587-a118-0923d6c5070a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bigExampleLab/AnuncioImagem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bigExampleLab/AnuncioTexto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bigExampleLab/AnuncioVideo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bigExampleLab/TipoAnuncio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bigExampleLab/Anuncio.java" beforeDir="false" afterPath="$PROJECT_DIR$/bigExampleLab/Anuncio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bigExampleLab/AnuncioImagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/bigExampleLab/AnuncioImagem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bigExampleLab/AnuncioTexto.java" beforeDir="false" afterPath="$PROJECT_DIR$/bigExampleLab/AnuncioTexto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bigExampleLab/AnuncioVideo.java" beforeDir="false" afterPath="$PROJECT_DIR$/bigExampleLab/AnuncioVideo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bigExampleLab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/bigExampleLab/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -45,13 +48,15 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -69,7 +74,8 @@
       <workItem from="1617003144692" duration="25000" />
       <workItem from="1617004137463" duration="2877000" />
       <workItem from="1618137794180" duration="47000" />
-      <workItem from="1618180266619" duration="3797000" />
+      <workItem from="1618180266619" duration="4082000" />
+      <workItem from="1618192362943" duration="960000" />
     </task>
     <servers />
   </component>

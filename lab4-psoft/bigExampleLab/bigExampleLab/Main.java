@@ -2,9 +2,9 @@ package bigExampleLab;
 
 public class Main {
     public static void main(String[] args) {
-        Anuncio anuncio1 = new Anuncio("Anúncio de Imagem", 0);
-        Anuncio anuncio2 = new Anuncio("Anúncio de Vídeo", 1);
-        Anuncio anuncio3 = new Anuncio("Anúncio de Imagem", 2);
+        Anuncio anuncio1 = new AnuncioTexto("Anúncio de Imagem");
+        Anuncio anuncio2 = new AnuncioImagem("Anúncio de Vídeo");
+        Anuncio anuncio3 = new AnuncioVideo("Anúncio de Imagem");
 
         Compra compra1 = new Compra(anuncio1,1);
         Compra compra2 = new Compra(anuncio2, 2);

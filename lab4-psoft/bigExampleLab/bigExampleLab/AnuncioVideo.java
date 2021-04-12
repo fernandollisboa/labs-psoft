@@ -1,7 +1,11 @@
 package bigExampleLab;
 
 public class AnuncioVideo extends Anuncio{
-    AnuncioVideo(){
-        this.preco = 2;
+    public AnuncioVideo(String descricao) {
+        super(descricao);
+    }
+    @Override
+    public double calculaPreco(int dias) {
+        return dias * 3;
     }
 }
