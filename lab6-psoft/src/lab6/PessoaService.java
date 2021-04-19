@@ -1,9 +1,14 @@
 package lab6;
 
+import java.time.LocalDate;
 import java.util.*;
 
 public class PessoaService {
     private PessoaRepository pessoaRepository;
+
+    public Collection<Pessoa> getListPessoas(){
+        return pessoaRepository.getPessoaMap();
+    }
 
     public PessoaService(){
         this.pessoaRepository = new PessoaRepository();
@@ -11,7 +16,7 @@ public class PessoaService {
 
     public void criaPessoa(String nome, String cpf, String endereco,
                            String numCartaoSus, String email, String telefone,
-                           String profissao, String comorbidades) throws IllegalArgumentException {
+                           String profissao, String comorbidades, LocalDate dataNasc) throws IllegalArgumentException {
         Optional<Pessoa> optionalPessoa = pessoaRepository.getPessoaByCpf(cpf);
 
         if (optionalPessoa.isPresent()) {
@@ -20,7 +25,7 @@ public class PessoaService {
 
         List<String> comorbidadesList = Arrays.asList(comorbidades.split(","));
 
-        Pessoa pessoa = new Pessoa(nome, cpf, endereco, numCartaoSus, email, telefone, profissao, comorbidadesList);
+        Pessoa pessoa = new Pessoa(nome, cpf, endereco, numCartaoSus, email, telefone, profissao, comorbidadesList,dataNasc);
 
         pessoaRepository.salvaPessoa(pessoa);
     }

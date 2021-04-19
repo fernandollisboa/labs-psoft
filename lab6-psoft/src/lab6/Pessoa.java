@@ -3,6 +3,9 @@ package lab6;
 import lab6.states.EstadoVacinacao;
 import lab6.states.NaoHabilitada;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -19,8 +22,9 @@ public class Pessoa {
     private List<String> comorbidades;
     private EstadoVacinacao estadoVacinacao;
     private Date dataPrimeiraDose;
+    private LocalDate dataNasc;
 
-    public Pessoa(String nome, String cpf, String endereco, String numCartaoSus, String email, String telefone, String profissao, List<String> comorbidades) {
+    public Pessoa(String nome, String cpf, String endereco, String numCartaoSus, String email, String telefone, String profissao, List<String> comorbidades, LocalDate dataNasc) {
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
@@ -29,9 +33,9 @@ public class Pessoa {
         this.telefone = telefone;
         this.profissao = profissao;
         this.comorbidades = new ArrayList<>();
-        this.estadoVacinacao = new NaoHabilitada();
-
         this.comorbidades.addAll(comorbidades);
+        this.estadoVacinacao = new NaoHabilitada();
+        this.dataNasc = dataNasc;
     }
 
     public String getNome() {
@@ -106,8 +110,12 @@ public class Pessoa {
         return estadoVacinacao;
     }
 
-    public void setEstadoVacinacao(EstadoVacinacao estadoVacinacao) {
+    public void setEstadoVacinacao(EstadoVacinacao estadoVacinacao){
         this.estadoVacinacao = estadoVacinacao;
+    }
+
+    public void atualizaEstadoVacinacao(){
+        this.estadoVacinacao.avancarEstado(this);
     }
 
     public Date getDataPrimeiraDose() {
@@ -116,5 +124,9 @@ public class Pessoa {
 
     public void setDataPrimeiraDose(Date dataPrimeiraDose) {
         this.dataPrimeiraDose = dataPrimeiraDose;
+    }
+
+    public Integer getIdade(){
+        return Period.between(dataNasc, LocalDate.now()).getYears();
     }
 }

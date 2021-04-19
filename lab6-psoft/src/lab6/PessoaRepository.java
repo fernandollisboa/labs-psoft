@@ -1,9 +1,7 @@
 package lab6;
 
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class PessoaRepository{
     private Map<String, Pessoa> pessoaMap;
@@ -21,4 +19,7 @@ public class PessoaRepository{
         return Optional.ofNullable(pessoaMap.get(cpf));
     }
 
+    public Collection<Pessoa> getPessoaMap() {
+        return pessoaMap.values();
+    }
 }
