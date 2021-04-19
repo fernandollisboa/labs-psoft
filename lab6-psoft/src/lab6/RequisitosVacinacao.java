@@ -1,5 +1,7 @@
 package lab6;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -50,6 +52,14 @@ public class RequisitosVacinacao {
 
     public boolean podeTomarPrimeiraDose(Pessoa pessoa) {
        return verificaIdade(pessoa.getIdade()) || verificaProfissao(pessoa.getProfissao()) || verificaComorbidade(pessoa.getComorbidades());
+    }
+
+    public boolean podeTomarSegundaDose(Pessoa pessoa){
+        return verificaTempoPrimeiraDose(pessoa.getDataPrimeiraDose());
+    }
+
+    private boolean verificaTempoPrimeiraDose(LocalDate dataPrimeiraDose){
+        return (Period.between(dataPrimeiraDose,LocalDate.now()).getDays() > 20);
     }
 
     private boolean verificaIdade(int idade){

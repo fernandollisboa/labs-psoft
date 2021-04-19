@@ -21,7 +21,7 @@ public class Pessoa {
     private String profissao;
     private List<String> comorbidades;
     private EstadoVacinacao estadoVacinacao;
-    private Date dataPrimeiraDose;
+    private LocalDate dataPrimeiraDose;
     private LocalDate dataNasc;
 
     public Pessoa(String nome, String cpf, String endereco, String numCartaoSus, String email, String telefone, String profissao, List<String> comorbidades, LocalDate dataNasc) {
@@ -118,11 +118,11 @@ public class Pessoa {
         this.estadoVacinacao.avancarEstado(this);
     }
 
-    public Date getDataPrimeiraDose() {
+    public LocalDate getDataPrimeiraDose() {
         return dataPrimeiraDose;
     }
 
-    public void setDataPrimeiraDose(Date dataPrimeiraDose) {
+    public void setDataPrimeiraDose(LocalDate dataPrimeiraDose) {
         this.dataPrimeiraDose = dataPrimeiraDose;
     }
 
