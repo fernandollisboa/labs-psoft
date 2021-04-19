@@ -18,7 +18,7 @@ public class RequisitosVacinacao {
         this.profissoes = new HashSet<String>();
     }
 
-    public void setIdade(Integer idade) {
+    public void setIdadeMinima(Integer idade) {
         this.idadeMinima = idade;
     }
 
@@ -78,7 +78,6 @@ public class RequisitosVacinacao {
         }
         return false;
     }
-
 
     @Override
     public String toString() {

@@ -14,7 +14,6 @@ public class PessoaRepository{
         pessoaMap.put(pessoa.getCpf(),pessoa);
     }
 
-
     public Optional<Pessoa> getPessoaByCpf(String cpf){
         return Optional.ofNullable(pessoaMap.get(cpf));
     }
@@ -22,5 +21,5 @@ public class PessoaRepository{
     public Collection<Pessoa> getPessoaMap() {
         return pessoaMap.values();
     }
-    
+
 }

@@ -3,12 +3,10 @@ package lab6;
 import lab6.states.EstadoVacinacao;
 import lab6.states.NaoHabilitada;
 
-import java.text.SimpleDateFormat;
+
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 public class Pessoa {
@@ -114,7 +112,7 @@ public class Pessoa {
         this.estadoVacinacao = estadoVacinacao;
     }
 
-    public void atualizaEstadoVacinacao(){
+    public void avancaEstadoVacinacao(){
         this.estadoVacinacao.avancarEstado(this);
     }
 

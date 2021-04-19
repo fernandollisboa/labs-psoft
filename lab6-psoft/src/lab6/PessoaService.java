@@ -30,6 +30,11 @@ public class PessoaService {
         pessoaRepository.salvaPessoa(pessoa);
     }
 
+    public void setNome(String nome, String cpf){
+        Pessoa pessoa = getPessoaCPF(cpf);
+        pessoa.setNome(nome);
+    }
+
     public void setEndereco(String endereco, String cpf){
         Pessoa pessoa = getPessoaCPF(cpf);
         pessoa.setEndereco(endereco);
@@ -68,5 +73,15 @@ public class PessoaService {
         }
 
         return optionalPessoa.get();
+    }
+
+    public void avancaEstadoDeVacinacao(String cpf) {
+        Pessoa pessoa = getPessoaCPF(cpf);
+        pessoa.avancaEstadoVacinacao();
+    }
+
+    public String getMessageVacinacao(String cpf) {
+        Pessoa pessoa = getPessoaCPF(cpf);
+        return pessoa.getEstadoVacinacao().message();
     }
 }
