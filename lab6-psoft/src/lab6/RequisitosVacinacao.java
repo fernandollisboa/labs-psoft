@@ -2,7 +2,7 @@ package lab6;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.Collections;
+import java.time.temporal.ChronoUnit;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -69,7 +69,7 @@ public class RequisitosVacinacao {
     }
 
     private boolean verificaTempoPrimeiraDose(LocalDate dataPrimeiraDose){
-        return (Period.between(dataPrimeiraDose,LocalDate.now()).getDays() > 20);
+        return ((ChronoUnit.DAYS.between(dataPrimeiraDose,LocalDate.now()) > 20));
     }
 
     private boolean verificaIdade(int idade){

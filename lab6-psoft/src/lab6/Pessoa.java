@@ -48,36 +48,16 @@ public class Pessoa {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
     public void setEndereco(String endereco) {
         this.endereco = endereco;
-    }
-
-    public String getNumCartaoSus() {
-        return numCartaoSus;
-    }
-
-    public void setNumCartaoSus(String numCartaoSus) {
-        this.numCartaoSus = numCartaoSus;
-    }
-
-    public String getEmail() {
-        return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public void setEstadoVacinacao(EstadoVacinacao estadoVacinacao){
+        this.estadoVacinacao = estadoVacinacao;
     }
 
     public void setTelefone(String telefone) {
@@ -108,10 +88,6 @@ public class Pessoa {
         return estadoVacinacao;
     }
 
-    public void setEstadoVacinacao(EstadoVacinacao estadoVacinacao){
-        this.estadoVacinacao = estadoVacinacao;
-    }
-
     public void avancaEstadoVacinacao(){
         this.estadoVacinacao.avancarEstado(this);
     }
@@ -123,6 +99,8 @@ public class Pessoa {
     public void setDataPrimeiraDose(LocalDate dataPrimeiraDose) {
         this.dataPrimeiraDose = dataPrimeiraDose;
     }
+
+
 
     public Integer getIdade(){
         return Period.between(dataNasc, LocalDate.now()).getYears();

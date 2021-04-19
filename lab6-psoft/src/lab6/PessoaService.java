@@ -35,36 +35,53 @@ public class PessoaService {
     public void setNome(String nome, String cpf){
         Pessoa pessoa = getPessoaCPF(cpf);
         pessoa.setNome(nome);
+        atualizaPessoa(pessoa);
     }
 
     public void setEndereco(String endereco, String cpf){
         Pessoa pessoa = getPessoaCPF(cpf);
         pessoa.setEndereco(endereco);
+        atualizaPessoa(pessoa);
     }
 
     public void setEmail(String email,String cpf){
         Pessoa pessoa = getPessoaCPF(cpf);
         pessoa.setEmail(email);
+        atualizaPessoa(pessoa);
     }
 
     public void setTelefone(String telefone, String cpf){
         Pessoa pessoa = getPessoaCPF(cpf);
         pessoa.setTelefone(telefone);
+        atualizaPessoa(pessoa);
     }
 
     public void setProfissao(String profissao, String cpf){
         Pessoa pessoa = getPessoaCPF(cpf);
         pessoa.setProfissao(profissao);
+        atualizaPessoa(pessoa);
     }
 
     public void adicionaComorbidade(String comorbidade, String cpf){
         Pessoa pessoa = getPessoaCPF(cpf);
         pessoa.addComorbidade(comorbidade);
+        atualizaPessoa(pessoa);
     }
 
     public void removeComorbidade(String comorbidade, String cpf) {
         Pessoa pessoa = getPessoaCPF(cpf);
         pessoa.removeComorbidade(comorbidade);
+        atualizaPessoa(pessoa);
+    }
+
+    public void setDataPrimeiraDose(LocalDate localDate, String cpf){
+        Pessoa pessoa = getPessoaCPF(cpf);
+        pessoa.setDataPrimeiraDose(localDate);
+        atualizaPessoa(pessoa);
+    }
+
+    public void atualizaPessoa(Pessoa pessoa){
+        pessoaRepository.atualizaPessoa(pessoa);
     }
 
     public Pessoa getPessoaCPF(String cpf) {
