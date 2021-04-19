@@ -16,6 +16,16 @@ public class RequisitosVacinacao {
         this.idadeMinima = 60;
         this.comorbidades = new HashSet<String>();
         this.profissoes = new HashSet<String>();
+        povoaSets();
+    }
+
+    private void povoaSets(){
+        this.profissoes.add("médico");
+        this.profissoes.add("enfermeiro");
+        this.profissoes.add("monitor de psoft");
+
+        this.comorbidades.add("asma");
+        this.comorbidades.add("autismo");
     }
 
     public void setIdadeMinima(Integer idade) {
@@ -81,10 +91,10 @@ public class RequisitosVacinacao {
 
     @Override
     public String toString() {
-        return "Para ser vacinada, a pessoa deve apresentar um dos seguintes requisitos\n" +
-                "idade maior que " + idadeMinima +
-                " OU alguma dessas comorbidades:" + comorbidades +
-                " OU alguma dessas profissões:" + profissoes;
+        return "Para ser vacinada, a Pessoa deve apresentar um dos seguintes requisitos:\n" +
+                "\tIdade maior que " + idadeMinima +
+                "\n\tOU alguma dessas Comorbidades:" + comorbidades +
+                "\n\tOU alguma dessas Profissões:" + profissoes;
     }
 }
 

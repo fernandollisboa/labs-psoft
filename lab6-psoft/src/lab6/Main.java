@@ -21,23 +21,18 @@ public class Main {
                 menuCadastro();
 
             } else if (opcao == 2) {
-                menuAlteracao();
+                menuAvancarVacinacao();
 
             } else if (opcao == 3) {
-                System.out.println("Digite o CPF da Pessoa cadastrada:");
-                String cpf = sc.nextLine();
-                pessoaService.avancaEstadoDeVacinacao(cpf);
-                System.out.println(pessoaService.getMessageVacinacao(cpf));
+                menuAlteracao();
 
-            } else if (opcao ==4) {
-                System.out.println("Digite o CPF da Pessoa cadastrada:");
-                String cpf = sc.nextLine();
-                System.out.println(pessoaService.getMessageVacinacao(cpf));
+            } else if (opcao == 4) {
+                menuVerificaVacinacao();
 
-            } else if(opcao == 5){
+            } else if (opcao == 5) {
                 System.out.println(requisitosVacinacao.toString());
 
-            } else if (opcao==6) {
+            } else if (opcao == 6) {
                 menuRequisitos();
 
             } else {
@@ -47,6 +42,29 @@ public class Main {
         } while (opcao != 0);
     }
 
+
+    private static void menuAvancarVacinacao(){
+        try {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Digite o CPF da Pessoa cadastrada: ");
+            String cpf = sc.nextLine();
+            pessoaService.avancaEstadoDeVacinacao(cpf);
+            System.out.println(pessoaService.getMessageVacinacao(cpf));
+        } catch (NullPointerException e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private static void menuVerificaVacinacao(){
+        Scanner sc = new Scanner(System.in);
+        try {
+            System.out.println("Digite o CPF da Pessoa cadastrada:");
+            String cpf = sc.nextLine();
+            System.out.println(pessoaService.getMessageVacinacao(cpf));
+        } catch (NullPointerException e){
+            System.out.println(e.getMessage());
+        }
+    }
 
     private static String menu() {
         return "\nSISTEMA DE VACINAÇÃO COVID-19\n" + "(1) Cadastrar Nova Pessoa\n" +
@@ -59,28 +77,33 @@ public class Main {
     }
 
     private static void menuCadastro() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Nome: ");
-        String nome = sc.nextLine();
-        System.out.println("CPF: ");
-        String cpf = sc.nextLine();
-        System.out.println("Endereço: ");
-        String endereco = sc.nextLine();
-        System.out.println("Número do cartão do SUS: ");
-        String numSus = sc.nextLine();
-        System.out.println("e-mail: ");
-        String email = sc.nextLine();
-        System.out.println("Telefone: ");
-        String telefone = sc.nextLine();
-        System.out.println("Profissão: ");
-        String profissao = sc.nextLine();
-        System.out.println("Comorbidades (digitar separadas por vígula): ");
-        String comorbidadesStr = sc.nextLine();
-        System.out.println("Data de Nascimento (AAAA-MM-DD): ");
-        String dataNascStr = sc.nextLine();
-        LocalDate dataNasc = LocalDate.parse(dataNascStr);
-
-        pessoaService.criaPessoa(nome, cpf, endereco, numSus, email, telefone, profissao, comorbidadesStr, dataNasc);
+        try {
+            System.out.println("\nMENU CADASTRO");
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Nome: ");
+            String nome = sc.nextLine();
+            System.out.println("CPF: ");
+            String cpf = sc.nextLine();
+            System.out.println("Endereço: ");
+            String endereco = sc.nextLine();
+            System.out.println("Número do cartão do SUS: ");
+            String numSus = sc.nextLine();
+            System.out.println("e-mail: ");
+            String email = sc.nextLine();
+            System.out.println("Telefone: ");
+            String telefone = sc.nextLine();
+            System.out.println("Profissão: ");
+            String profissao = sc.nextLine();
+            System.out.println("Comorbidades (digitar separadas por vígula e espaços): ");
+            String comorbidadesStr = sc.nextLine();
+            System.out.println("Data de Nascimento (AAAA-MM-DD): ");
+            String dataNascStr = sc.nextLine();
+            LocalDate dataNasc = LocalDate.parse(dataNascStr);
+            pessoaService.criaPessoa(nome, cpf, endereco, numSus, email, telefone, profissao, comorbidadesStr, dataNasc);
+            System.out.println("Pessoa cadastrada com sucesso!");
+        }catch (Exception e ){
+            System.out.println(e.getMessage());
+        }
     }
 
     private static void menuAlteracao() {
@@ -143,9 +166,6 @@ public class Main {
     private static void menuRequisitos() {
         Scanner sc = new Scanner(System.in);
         int opcao;
-        System.out.println("Insira o CPF da Pessoa a ser modificada: ");
-        String cpf = sc.nextLine();
-
         System.out.println(
                 "\n ALTERAÇÃO DE REQUISITOS MÍNIMOS DE VACINAÇÃO\n"+
                 "(1) Alterar Idade Mínima;\n" +

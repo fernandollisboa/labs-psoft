@@ -19,6 +19,8 @@ public class PessoaService {
                            String profissao, String comorbidades, LocalDate dataNasc) throws IllegalArgumentException {
         Optional<Pessoa> optionalPessoa = pessoaRepository.getPessoaByCpf(cpf);
 
+        if(cpf == null) throw new NullPointerException("CPF não pode ser nulo!");
+
         if (optionalPessoa.isPresent()) {
             throw new IllegalArgumentException("Pessoa com esse CPF já cadastrada!");
         }
