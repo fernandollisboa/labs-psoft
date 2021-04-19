@@ -24,7 +24,7 @@ class PessoaServiceTest {
 
     @Test
     void vacinarPessoasTest(){
-        // Fernando nao pode ser vacinado antes de virar monitor de psoft
+        // fernando nao pode ser vacinado antes de virar monitor de psoft
         assertEquals("Ainda não habilitado para vacinação",pessoaService.getMessageVacinacao("12345678909"));
         pessoaService.avancaEstadoDeVacinacao("12345678909");
         assertEquals("Ainda não habilitado para vacinação",pessoaService.getMessageVacinacao("12345678909"));

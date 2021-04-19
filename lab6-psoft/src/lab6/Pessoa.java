@@ -101,7 +101,6 @@ public class Pessoa {
     }
 
 
-
     public Integer getIdade(){
         return Period.between(dataNasc, LocalDate.now()).getYears();
     }
