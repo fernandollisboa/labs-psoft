@@ -1,7 +1,6 @@
 package lab6;
 
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import java.util.HashSet;
 import java.util.List;
@@ -22,7 +21,6 @@ public class RequisitosVacinacao {
     private void povoaSets(){
         this.profissoes.add("médico");
         this.profissoes.add("enfermeiro");
-        this.profissoes.add("monitor de psoft");
 
         this.comorbidades.add("asma");
         this.comorbidades.add("autismo");
@@ -44,20 +42,8 @@ public class RequisitosVacinacao {
         return this.idadeMinima;
     }
 
-    public Set<String> getComorbidade() {
-        return comorbidades;
-    }
-
     public Set<String> getProfissoes() {
         return profissoes;
-    }
-
-    public String comorbidadesToString() {
-        return comorbidades.toString();
-    }
-
-    public String profissoesToString() {
-        return profissoes.toString();
     }
 
     public boolean podeTomarPrimeiraDose(Pessoa pessoa) {

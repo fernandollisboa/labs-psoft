@@ -1,6 +1,8 @@
 package lab6.tests;
 
 import lab6.PessoaService;
+import lab6.RequisitosVacinacao;
+import lab6.RequisitosVacinacaoService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,24 +13,25 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PessoaServiceTest {
     PessoaService pessoaService = new PessoaService();
+    RequisitosVacinacaoService requisitosVacinacaoService = new RequisitosVacinacaoService();
 
     @BeforeEach
     void povoaService(){
         LocalDate dataNasc = LocalDate.parse("1999-05-28");
-        pessoaService.criaPessoa("fernando","12345678909","av coelho campos 23", "1111","fernando@hotmail","11324435","estudante de cc","asma , bronquite", dataNasc);
+        pessoaService.criaPessoa("fernando","12345678909","av coelho campos 23", "1111","fernando@hotmail","11324435","estudante de cc","asma , bronquite", dataNasc,requisitosVacinacaoService.getRequisitosVacinacao());
 
         dataNasc = LocalDate.parse("1959-06-01");
-        pessoaService.criaPessoa("pedro","11111111111","av campos elisios 323", "1112","pedrinho@hotmail","114234435","aposentado","", dataNasc);
+        pessoaService.criaPessoa("pedro","11111111111","av campos elisios 323", "1112","pedrinho@hotmail","114234435","aposentado","", dataNasc,requisitosVacinacaoService.getRequisitosVacinacao());
 
     }
 
     @Test
     void vacinarPessoasTest(){
+        requisitosVacinacaoService.addProfissao("monitor de psoft");
         // fernando nao pode ser vacinado antes de virar monitor de psoft
         assertEquals("Ainda não habilitado para vacinação",pessoaService.getMessageVacinacao("12345678909"));
         pessoaService.avancaEstadoDeVacinacao("12345678909");
         assertEquals("Ainda não habilitado para vacinação",pessoaService.getMessageVacinacao("12345678909"));
-
         pessoaService.setProfissao("monitor de psoft", "12345678909");
         pessoaService.avancaEstadoDeVacinacao("12345678909");
         assertEquals("Habilitado para tomar primeira dose",pessoaService.getMessageVacinacao("12345678909"));
@@ -42,6 +45,7 @@ class PessoaServiceTest {
         pessoaService.avancaEstadoDeVacinacao("11111111111");
         assertEquals("Primeira dose já aplicada",pessoaService.getMessageVacinacao("11111111111"));
     }
+    
     @Test
     void verificaTempoVacinacaoSegundaDoseTest(){
         pessoaService.avancaEstadoDeVacinacao("11111111111");

@@ -2,9 +2,13 @@ package lab6.states;
 
 import lab6.Pessoa;
 import lab6.RequisitosVacinacao;
+import lab6.RequisitosVacinacaoService;
 
 public class NaoHabilitada extends EstadoVacinacao{
-    protected RequisitosVacinacao requisitosVacinacao = new RequisitosVacinacao();
+
+    public NaoHabilitada(RequisitosVacinacao requisitosVacinacao) {
+        super(requisitosVacinacao);
+    }
 
     @Override
     public void avancarEstado(Pessoa pessoa) {

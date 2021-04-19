@@ -22,7 +22,7 @@ public class Pessoa {
     private LocalDate dataPrimeiraDose;
     private LocalDate dataNasc;
 
-    public Pessoa(String nome, String cpf, String endereco, String numCartaoSus, String email, String telefone, String profissao, List<String> comorbidades, LocalDate dataNasc) {
+    public Pessoa(String nome, String cpf, String endereco, String numCartaoSus, String email, String telefone, String profissao, List<String> comorbidades, LocalDate dataNasc, RequisitosVacinacao requisitosVacinacao) {
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
@@ -32,7 +32,7 @@ public class Pessoa {
         this.profissao = profissao;
         this.comorbidades = new ArrayList<>();
         this.comorbidades.addAll(comorbidades);
-        this.estadoVacinacao = new NaoHabilitada();
+        this.estadoVacinacao = new NaoHabilitada(requisitosVacinacao);
         this.dataNasc = dataNasc;
     }
 
@@ -103,5 +103,9 @@ public class Pessoa {
 
     public Integer getIdade(){
         return Period.between(dataNasc, LocalDate.now()).getYears();
+    }
+
+    public void atualizaRequisitoVacinacao(RequisitosVacinacao requisitosVacinacao){
+        this.estadoVacinacao.setRequisitoVacinacao(requisitosVacinacao);
     }
 }

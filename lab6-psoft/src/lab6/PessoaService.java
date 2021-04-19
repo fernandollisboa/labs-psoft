@@ -16,7 +16,7 @@ public class PessoaService {
 
     public void criaPessoa(String nome, String cpf, String endereco,
                            String numCartaoSus, String email, String telefone,
-                           String profissao, String comorbidades, LocalDate dataNasc) throws IllegalArgumentException {
+                           String profissao, String comorbidades, LocalDate dataNasc,RequisitosVacinacao requisitosVacinacao) throws IllegalArgumentException {
         Optional<Pessoa> optionalPessoa = pessoaRepository.getPessoaByCpf(cpf);
 
         if(cpf == null) throw new NullPointerException("CPF não pode ser nulo!");
@@ -27,7 +27,7 @@ public class PessoaService {
 
         List<String> comorbidadesList = Arrays.asList(comorbidades.split(","));
 
-        Pessoa pessoa = new Pessoa(nome, cpf, endereco, numCartaoSus, email, telefone, profissao, comorbidadesList,dataNasc);
+        Pessoa pessoa = new Pessoa(nome, cpf, endereco, numCartaoSus, email, telefone, profissao, comorbidadesList,dataNasc,requisitosVacinacao);
 
         pessoaRepository.salvaPessoa(pessoa);
     }
@@ -103,4 +103,11 @@ public class PessoaService {
         Pessoa pessoa = getPessoaCPF(cpf);
         return pessoa.getEstadoVacinacao().message();
     }
+
+    public void atualizaRequisitosVacinacao(RequisitosVacinacao requisitosVacinacao){
+        for(Pessoa p: pessoaRepository.getPessoaMap()){
+            p.atualizaRequisitoVacinacao(requisitosVacinacao);
+        }
+    }
+
 }

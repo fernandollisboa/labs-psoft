@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static RequisitosVacinacao requisitosVacinacao = new RequisitosVacinacao();
+    private static RequisitosVacinacaoService requisitosVacinacaoService = new RequisitosVacinacaoService();
     private static PessoaService pessoaService = new PessoaService();
 
 
@@ -30,7 +30,7 @@ public class Main {
                 menuVerificaVacinacao();
 
             } else if (opcao == 5) {
-                System.out.println(requisitosVacinacao.toString());
+                System.out.println(requisitosVacinacaoService.toString());
 
             } else if (opcao == 6) {
                 menuRequisitos();
@@ -99,7 +99,7 @@ public class Main {
             System.out.println("Data de Nascimento (AAAA-MM-DD): ");
             String dataNascStr = sc.nextLine();
             LocalDate dataNasc = LocalDate.parse(dataNascStr);
-            pessoaService.criaPessoa(nome, cpf, endereco, numSus, email, telefone, profissao, comorbidadesStr, dataNasc);
+            pessoaService.criaPessoa(nome, cpf, endereco, numSus, email, telefone, profissao, comorbidadesStr, dataNasc,requisitosVacinacaoService.getRequisitosVacinacao());
             System.out.println("Pessoa cadastrada com sucesso!");
         }catch (Exception e ){
             System.out.println(e.getMessage());
@@ -178,18 +178,20 @@ public class Main {
         if(opcao == 1){
             System.out.println("Qual a nova idade mínima?");
             int idade = sc.nextInt();
-            requisitosVacinacao.setIdadeMinima(idade);
+            requisitosVacinacaoService.setIdadeMinima(idade);
         } else if (opcao == 2){
             System.out.println("Qual a nova comorbidade? ");
             String comorb = sc.nextLine();
-            requisitosVacinacao.addComorbidade(comorb);
+            requisitosVacinacaoService.addComorbidade(comorb);
         } else if (opcao == 3){
             System.out.println("Qual a nova profissão? ");
             String profissao = sc.nextLine();
-            requisitosVacinacao.addProfissao(profissao);
+            requisitosVacinacaoService.addProfissao(profissao);
         } else{
             System.out.println("Opção inválida!");
         }
+
+        pessoaService.atualizaRequisitosVacinacao(requisitosVacinacaoService.getRequisitosVacinacao());
 
     }
 
